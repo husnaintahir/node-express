@@ -3,6 +3,9 @@ var path = require('path');
 const bodyParser = require('body-parser');
 const db = require('./db');
 
+
+const foodRouter = require('./routes/foodRoutes.js');
+
 const app = express();
 
 
@@ -12,6 +15,7 @@ app.use(express.static(path.join(__dirname)));
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 1000000 }));
 
+app.use(foodRouter);
 
 app.get("/", function (req, res) {
     res.send({ "Hello": "Welcome to test project" })
