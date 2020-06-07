@@ -14,7 +14,7 @@ const MONGO_DB = 'lofo';
 
 
 
-const MONGO_URL = `mongodb://${MONGO_HOSTNAME}/${MONGO_DB}/?authSource=admin`;
+const MONGO_URL = `mongodb://${MONGO_HOSTNAME}/${MONGO_DB}?authSource=admin`;
 
 mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
